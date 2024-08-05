@@ -1,20 +1,107 @@
-03/08/2024 - 17:35:58 [info]: Connected to the database
-03/08/2024 - 17:36:30 [info]: Server is running on port 4000
-03/08/2024 - 17:36:33 [info]: Connected to the database
-03/08/2024 - 18:31:32 [info]: Server is running on port 4000
-03/08/2024 - 18:31:35 [info]: Connected to the database
-03/08/2024 - 18:32:04 [info]: Server is running on port 4000
-03/08/2024 - 18:32:07 [info]: Connected to the database
-03/08/2024 - 20:44:45 [info]: Server is running on port 4000
-03/08/2024 - 20:44:48 [info]: Connected to the database
-03/08/2024 - 20:49:30 [info]: Server is running on port 4000
-03/08/2024 - 20:49:52 [info]: Server is running on port 4000
-03/08/2024 - 20:49:56 [info]: Connected to the database
-03/08/2024 - 20:50:55 [info]: Server is running on port 4000
-03/08/2024 - 20:50:58 [info]: Connected to the database
-03/08/2024 - 20:51:58 [info]: Server is running on port 4000
-03/08/2024 - 20:52:01 [info]: Connected to the database
-03/08/2024 - 21:02:57 [info]: Server is running on port 4000
-03/08/2024 - 21:03:00 [info]: Connected to the database
-03/08/2024 - 21:36:42 [info]: Server is running on port 4000
-03/08/2024 - 21:36:45 [info]: Connected to the database
+05/08/2024 - 20:41:38 [info]: Server is running on port 8080
+05/08/2024 - 20:41:40 [info]: Connected to the database
+05/08/2024 - 20:51:36 [info]: Server is running on port 8080
+05/08/2024 - 20:51:56 [info]: Server is running on port 8080
+05/08/2024 - 20:51:57 [info]: Connected to the database
+05/08/2024 - 20:52:43 [info]: Server is running on port 8080
+05/08/2024 - 20:52:44 [info]: Connected to the database
+05/08/2024 - 20:54:10 [info]: Server is running on port 8080
+05/08/2024 - 20:54:11 [info]: Connected to the database
+05/08/2024 - 20:54:34 [info]: Server is running on port 8080
+05/08/2024 - 20:54:35 [info]: Connected to the database
+05/08/2024 - 20:55:48 [info]: Server is running on port 8080
+05/08/2024 - 20:55:50 [info]: Connected to the database
+05/08/2024 - 20:55:59 [info]: Server is running on port 8080
+05/08/2024 - 20:56:06 [info]: Server is running on port 8080
+05/08/2024 - 20:56:08 [info]: Connected to the database
+05/08/2024 - 20:56:20 [info]: Server is running on port 8080
+05/08/2024 - 20:56:27 [info]: Server is running on port 8080
+05/08/2024 - 20:56:28 [info]: Connected to the database
+05/08/2024 - 20:57:26 [info]: Server is running on port 8080
+05/08/2024 - 20:57:28 [info]: Connected to the database
+05/08/2024 - 20:57:32 [info]: Server is running on port 8080
+05/08/2024 - 20:57:33 [info]: Connected to the database
+05/08/2024 - 21:04:37 [info]: Server is running on port 8080
+05/08/2024 - 21:04:37 [info]: Server is running on port 8080
+05/08/2024 - 21:04:40 [info]: Connected to the database
+05/08/2024 - 21:04:40 [info]: Connected to the database
+05/08/2024 - 21:04:40 [info]: Connected to the database
+05/08/2024 - 21:04:41 [info]: Server is running on port 8080
+05/08/2024 - 21:04:42 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:04:44 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:07:34 [info]: Server is running on port 8080
+05/08/2024 - 21:07:36 [info]: Connected to the database
+05/08/2024 - 21:08:04 [info]: Server is running on port 8080
+05/08/2024 - 21:08:04 [info]: Server is running on port 8080
+05/08/2024 - 21:08:06 [info]: Connected to the database
+05/08/2024 - 21:08:06 [info]: Connected to the database
+05/08/2024 - 21:08:06 [info]: Connected to the database
+05/08/2024 - 21:08:07 [info]: Server is running on port 8080
+05/08/2024 - 21:08:08 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:08:10 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:10:33 [info]: Server is running on port 8080
+05/08/2024 - 21:10:33 [info]: Server is running on port 8080
+05/08/2024 - 21:10:34 [info]: Connected to the database
+05/08/2024 - 21:10:34 [info]: Connected to the database
+05/08/2024 - 21:10:34 [info]: Connected to the database
+05/08/2024 - 21:10:35 [info]: Server is running on port 8080
+05/08/2024 - 21:10:36 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:11:14 [info]: Server is running on port 8080
+05/08/2024 - 21:11:14 [info]: Server is running on port 8080
+05/08/2024 - 21:11:14 [info]: Server is running on port 8080
+05/08/2024 - 21:11:15 [info]: Connected to the database
+05/08/2024 - 21:11:16 [info]: Connected to the database
+05/08/2024 - 21:11:16 [info]: Connected to the database
+05/08/2024 - 21:11:18 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:11:20 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:20:44 [info]: Server is running on port 8080
+05/08/2024 - 21:20:44 [info]: Server is running on port 8080
+05/08/2024 - 21:20:46 [info]: Connected to the database
+05/08/2024 - 21:20:46 [info]: Connected to the database
+05/08/2024 - 21:20:46 [info]: Connected to the database
+05/08/2024 - 21:20:46 [info]: Server is running on port 8080
+05/08/2024 - 21:20:48 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:23:12 [info]: Server is running on port 8080
+05/08/2024 - 21:23:14 [info]: Connected to the database
+05/08/2024 - 21:23:14 [info]: Connected to the database
+05/08/2024 - 21:23:14 [info]: Server is running on port 8080
+05/08/2024 - 21:23:16 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:25:11 [info]: Server is running on port 8080
+05/08/2024 - 21:25:13 [info]: Connected to the database
+05/08/2024 - 21:25:13 [info]: Connected to the database
+05/08/2024 - 21:25:14 [info]: Server is running on port 8080
+05/08/2024 - 21:25:15 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:26:21 [info]: Server is running on port 8080
+05/08/2024 - 21:26:22 [info]: Connected to the database
+05/08/2024 - 21:26:22 [info]: Connected to the database
+05/08/2024 - 21:26:23 [info]: Server is running on port 8080
+05/08/2024 - 21:26:24 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:27:30 [info]: Server is running on port 8080
+05/08/2024 - 21:27:31 [info]: Connected to the database
+05/08/2024 - 21:27:32 [info]: Connected to the database
+05/08/2024 - 21:27:33 [info]: Server is running on port 8080
+05/08/2024 - 21:27:34 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:29:59 [info]: Server is running on port 8080
+05/08/2024 - 21:30:01 [info]: Connected to the database
+05/08/2024 - 21:30:02 [info]: Connected to the database
+05/08/2024 - 21:30:03 [info]: Server is running on port 8080
+05/08/2024 - 21:30:04 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:31:05 [info]: Server is running on port 8080
+05/08/2024 - 21:31:07 [info]: Connected to the database
+05/08/2024 - 21:31:07 [info]: Connected to the database
+05/08/2024 - 21:31:08 [info]: Server is running on port 8080
+05/08/2024 - 21:31:08 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:32:00 [info]: Server is running on port 8080
+05/08/2024 - 21:32:02 [info]: Connected to the database
+05/08/2024 - 21:32:02 [info]: Connected to the database
+05/08/2024 - 21:32:02 [info]: Server is running on port 8080
+05/08/2024 - 21:32:04 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:32:57 [info]: Server is running on port 8080
+05/08/2024 - 21:32:59 [info]: Connected to the database
+05/08/2024 - 21:32:59 [info]: Connected to the database
+05/08/2024 - 21:32:59 [info]: Server is running on port 8080
+05/08/2024 - 21:33:01 [error]: Cast to ObjectId failed for value "1" (type string) at path "_id" for model "Blog"
+05/08/2024 - 21:40:53 [info]: Server is running on port 8080
+05/08/2024 - 21:40:55 [info]: Connected to the database
+05/08/2024 - 21:43:30 [error]: User validation failed: password: Path `password` (`Eme@123`) is shorter than the minimum allowed length (8).
+05/08/2024 - 21:43:40 [error]: User validation failed: password: Path `password` (`Eme@123`) is shorter than the minimum allowed length (8).

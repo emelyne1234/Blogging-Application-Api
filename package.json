@@ -1,12 +1,12 @@
 {
-  "name": "mag-s-brand-backend",
+  "name": "Emelyne's-blogginp app",
   "version": "1.0.0",
   "description": "\"my blog and portfolio api\"",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon src/server.ts",
-    "don't test unless database url is changed": "jest --forceExit --verbose --coverage",
+    "test": "jest --forceExit --verbose --coverage",
     "build": "tsc",
     "lint": "eslint .eslintignore \"**/*.{js,ts}\""
   },
