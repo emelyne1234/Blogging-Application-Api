@@ -1,1 +1,1 @@
-# Blogging-Application-Api
+# Blogging application
