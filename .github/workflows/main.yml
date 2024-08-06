@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [main]
-    
+
 jobs:
   test:
     name: Test
@@ -20,18 +20,27 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Check Environment Variables
+        run: |
+          echo "mongo_url: ${{ env.mongo_url }}"
+          echo "mongo_url_test: ${{ env.mongo_url_test }}"
+          echo "secret_key: ${{ env.secret_key }}"
+          echo "port: ${{ env.port }}"
+          echo "cloud_name: ${{ env.cloud_name }}"
+          echo "api_key: ${{ env.api_key }}"
+          echo "api_key_secret: ${{ env.api_key_secret }}"
       - name: NPM install, build and test
         run: |
           npm install
           npm run test
         env:
-          MONGO_URL: ${{ env.MONGO_URL }}
-          MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
-          SECRET_KEY: ${{ env.SECRET_KEY }}
-          PORT: ${{ env.PORT }}
-          CLOUD_NAME: ${{ env.CLOUD_NAME }}
-          API_KEY: ${{ env.API_KEY }}
-          API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
+          mongo_url: ${{ env.mongo_url }}
+          mongo_url_test: ${{ env.mongo_url_test }}
+          secret_key: ${{ env.secret_key }}
+          port: ${{ env.port }}
+          cloud_name: ${{ env.cloud_name }}
+          api_key: ${{ env.api_key }}
+          api_key_secret: ${{ env.api_key_secret }}
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -60,5 +69,5 @@ jobs:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service-id: ${{ env.SERVICE_ID }} 
-          api-key: ${{ env.RENDER_API_KEY }} 
+          service-id: ${{ env.service_id }} 
+          api-key: ${{ env.render_api_key }} 
