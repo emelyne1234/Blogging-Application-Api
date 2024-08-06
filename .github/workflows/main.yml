@@ -34,6 +34,7 @@ jobs:
           API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
   build:
     name: Build
+    needs: [test]
     runs-on: ubuntu-latest
     strategy:
       matrix:
