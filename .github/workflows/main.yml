@@ -36,6 +36,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Print Environment Variables
+        run: |
+          echo "MONGO_URL=${{ env.MONGO_URL }}"
+          echo "MONGO_URL_TEST=${{ env.MONGO_URL_TEST }}"
+          echo "SECRET_KEY=${{ env.SECRET_KEY }}"
+          echo "PORT=${{ env.PORT }}"
+          echo "CLOUD_NAME=${{ env.CLOUD_NAME }}"
+          echo "API_KEY=${{ env.API_KEY }}"
+          echo "API_KEY_SECRET=${{ env.API_KEY_SECRET }}"
       - name: NPM install, build and test
         run: |
           npm install
