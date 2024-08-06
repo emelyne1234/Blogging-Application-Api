@@ -3,23 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [main]
-
-env:
-  MONGO_URL: ${{ env.MONGO_URL }}
-  MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
-  SECRET_KEY: ${{ env.SECRET_KEY }}
-  PORT: ${{ env.PORT }}
-  CLOUD_NAME: ${{ env.CLOUD_NAME }}
-  API_KEY: ${{ env.API_KEY }}
-  API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
-  SERVICE_ID: ${{ env.SERVICE_ID }}
-  RENDER_API_KEY: ${{ env.RENDER_API_KEY }}
-  
-permissions:
-  contents: read
-  actions: read
-  packages: read
-
+    
 jobs:
   test:
     name: Test
@@ -36,15 +20,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Print Environment Variables
-        run: |
-          echo "MONGO_URL=${{ env.MONGO_URL }}"
-          echo "MONGO_URL_TEST=${{ env.MONGO_URL_TEST }}"
-          echo "SECRET_KEY=${{ env.SECRET_KEY }}"
-          echo "PORT=${{ env.PORT }}"
-          echo "CLOUD_NAME=${{ env.CLOUD_NAME }}"
-          echo "API_KEY=${{ env.API_KEY }}"
-          echo "API_KEY_SECRET=${{ env.API_KEY_SECRET }}"
       - name: NPM install, build and test
         run: |
           npm install
@@ -57,7 +32,6 @@ jobs:
           CLOUD_NAME: ${{ env.CLOUD_NAME }}
           API_KEY: ${{ env.API_KEY }}
           API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
-
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -77,14 +51,6 @@ jobs:
         run: |
           npm install
           npm run build
-        env:
-          MONGO_URL: ${{ env.MONGO_URL }}
-          MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
-          SECRET_KEY: ${{ env.SECRET_KEY }}
-          PORT: ${{ env.PORT }}
-          CLOUD_NAME: ${{ env.CLOUD_NAME }}
-          API_KEY: ${{ env.API_KEY }}
-          API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
 
   deploy:
     name: Deploy
@@ -95,4 +61,4 @@ jobs:
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ env.SERVICE_ID }} 
-          api-key: ${{ env.RENDER_API_KEY }}
+          api-key: ${{ env.RENDER_API_KEY }} 
