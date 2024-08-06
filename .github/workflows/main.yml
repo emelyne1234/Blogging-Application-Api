@@ -5,15 +5,15 @@ on:
     branches: [main]
 
 env:
-  mongo_url: ${{ env.MONGO_URL }}
-  mongo_url_test: ${{ env.MONGO_URL_TEST }}
-  secret_key: ${{ env.SECRET_KEY }}
-  port: ${{ env.PORT }}
-  cloud_name: ${{ env.CLOUD_NAME }}
-  api_key: ${{ env.API_KEY }}
-  api_key_secret: ${{ env.API_KEY_SECRET }}
-  service_id: ${{ env.SERVICE_ID }}
-  render_api_key: ${{ env.RENDER_API_KEY }}
+  MONGO_URL: ${{ env.MONGO_URL }}
+  MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
+  SECRET_KEY: ${{ env.SECRET_KEY }}
+  PORT: ${{ env.PORT }}
+  CLOUD_NAME: ${{ env.CLOUD_NAME }}
+  API_KEY: ${{ env.API_KEY }}
+  API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
+  SERVICE_ID: ${{ env.SERVICE_ID }}
+  RENDER_API_KEY: ${{ env.RENDER_API_KEY }}
   
 permissions:
   contents: read
@@ -40,6 +40,15 @@ jobs:
         run: |
           npm install
           npm run test
+        env:
+          MONGO_URL: ${{ env.MONGO_URL }}
+          MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
+          SECRET_KEY: ${{ env.SECRET_KEY }}
+          PORT: ${{ env.PORT }}
+          CLOUD_NAME: ${{ env.CLOUD_NAME }}
+          API_KEY: ${{ env.API_KEY }}
+          API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
+
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -59,6 +68,14 @@ jobs:
         run: |
           npm install
           npm run build
+        env:
+          MONGO_URL: ${{ env.MONGO_URL }}
+          MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
+          SECRET_KEY: ${{ env.SECRET_KEY }}
+          PORT: ${{ env.PORT }}
+          CLOUD_NAME: ${{ env.CLOUD_NAME }}
+          API_KEY: ${{ env.API_KEY }}
+          API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
 
   deploy:
     name: Deploy
@@ -68,5 +85,5 @@ jobs:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service-id: ${{ env.service_id }} 
-          api-key: ${{ env.render_api_key }}
+          service-id: ${{ env.SERVICE_ID }} 
+          api-key: ${{ env.RENDER_API_KEY }}
