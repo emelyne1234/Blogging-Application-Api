@@ -3,10 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [main]
-
+ 
 jobs:
   test:
     name: Test
@@ -26,7 +23,7 @@ jobs:
       - name: NPM install, build and test
         run: |
           npm install
-          npm test
+          npm run test
         env:
           MONGO_URL: ${{ secrets.MONGO_URL }}
           MONGO_URL_TEST: ${{ secrets.MONGO_URL_TEST }}
@@ -35,14 +32,8 @@ jobs:
           CLOUD_NAME: ${{ secrets.CLOUD_NAME }}
           API_KEY: ${{ secrets.API_KEY }}
           API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
-      - name: Send Coverage to Coveralls
-        uses: coverallsapp/github-action@v2.2.3
-        with:
-          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-
   build:
     name: Build
-    needs: [test]
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -66,22 +57,9 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          fetch-depth: 0
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Deploy to DigitalOcean
-        env:
-          DIGITALOCEAN_API_TOKEN: ${{ secrets.DIGITALOCEAN_API_TOKEN }}
-        run: |
-          # Here we assume you have a script to deploy your app to DigitalOcean
-          # You might use `doctl` (DigitalOcean CLI) or other deployment scripts
-          # Example using doctl to deploy a Docker image:
-          # doctl apps update <app-id> --spec .do/app.yaml
-
-          # Replace the following with your actual deployment commands
-          echo "Deploying to DigitalOcean"
+          service-id: ${{ secrets.SERVICE_ID }} 
+          api-key: ${{ secrets.RENDER_API_KEY }} 
+     
