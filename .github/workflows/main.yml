@@ -5,15 +5,16 @@ on:
     branches: [main]
 
 env:
-  mongo_url: ${{ secrets.MONGO_URL }}
-  mongo_url_test: ${{ secrets.MONGO_URL_TEST }}
-  secret_key: ${{ secrets.SECRET_KEY }}
-  port: ${{ secrets.PORT }}
-  cloud_name: ${{ secrets.CLOUD_NAME }}
-  api_key: ${{ secrets.API_KEY }}
-  api_key_secret: ${{ secrets.API_KEY_SECRET }}
-  service_id: ${{ secrets.SERVICE_ID }}
-  render_api_key: ${{ secrets.RENDER_API_KEY }}
+  mongo_url: ${{ env.MONGO_URL }}
+  mongo_url_test: ${{ env.MONGO_URL_TEST }}
+  secret_key: ${{ env.SECRET_KEY }}
+  port: ${{ env.PORT }}
+  cloud_name: ${{ env.CLOUD_NAME }}
+  api_key: ${{ env.API_KEY }}
+  api_key_secret: ${{ env.API_KEY_SECRET }}
+  service_id: ${{ env.SERVICE_ID }}
+  render_api_key: ${{ env.RENDER_API_KEY }}
+  
 permissions:
   contents: read
   actions: read
