@@ -25,13 +25,13 @@ jobs:
           npm install
           npm run test
         env:
-          MONGO_URL: ${{ secrets.MONGO_URL }}
-          MONGO_URL_TEST: ${{ secrets.MONGO_URL_TEST }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          PORT: ${{ secrets.PORT }}
-          CLOUD_NAME: ${{ secrets.CLOUD_NAME }}
-          API_KEY: ${{ secrets.API_KEY }}
-          API_KEY_SECRET: ${{ secrets.API_KEY_SECRET }}
+          MONGO_URL: ${{ env.MONGO_URL }}
+          MONGO_URL_TEST: ${{ env.MONGO_URL_TEST }}
+          SECRET_KEY: ${{ env.SECRET_KEY }}
+          PORT: ${{ env.PORT }}
+          CLOUD_NAME: ${{ env.CLOUD_NAME }}
+          API_KEY: ${{ env.API_KEY }}
+          API_KEY_SECRET: ${{ env.API_KEY_SECRET }}
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -60,6 +60,5 @@ jobs:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service-id: ${{ secrets.SERVICE_ID }} 
-          api-key: ${{ secrets.RENDER_API_KEY }} 
-     
+          service-id: ${{ env.SERVICE_ID }} 
+          api-key: ${{ env.RENDER_API_KEY }} 
