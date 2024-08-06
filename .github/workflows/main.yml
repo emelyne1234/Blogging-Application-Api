@@ -4,6 +4,17 @@ on:
   push:
     branches: [main]
 
+env:
+  mongo_url: ${{ secrets.MONGO_URL }}
+  mongo_url_test: ${{ secrets.MONGO_URL_TEST }}
+  secret_key: ${{ secrets.SECRET_KEY }}
+  port: ${{ secrets.PORT }}
+  cloud_name: ${{ secrets.CLOUD_NAME }}
+  api_key: ${{ secrets.API_KEY }}
+  api_key_secret: ${{ secrets.API_KEY_SECRET }}
+  service_id: ${{ secrets.SERVICE_ID }}
+  render_api_key: ${{ secrets.RENDER_API_KEY }}
+
 jobs:
   test:
     name: Test
@@ -20,27 +31,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Check Environment Variables
-        run: |
-          echo "mongo_url: ${{ env.mongo_url }}"
-          echo "mongo_url_test: ${{ env.mongo_url_test }}"
-          echo "secret_key: ${{ env.secret_key }}"
-          echo "port: ${{ env.port }}"
-          echo "cloud_name: ${{ env.cloud_name }}"
-          echo "api_key: ${{ env.api_key }}"
-          echo "api_key_secret: ${{ env.api_key_secret }}"
       - name: NPM install, build and test
         run: |
           npm install
           npm run test
-        env:
-          mongo_url: ${{ env.mongo_url }}
-          mongo_url_test: ${{ env.mongo_url_test }}
-          secret_key: ${{ env.secret_key }}
-          port: ${{ env.port }}
-          cloud_name: ${{ env.cloud_name }}
-          api_key: ${{ env.api_key }}
-          api_key_secret: ${{ env.api_key_secret }}
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -70,4 +64,4 @@ jobs:
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: ${{ env.service_id }} 
-          api-key: ${{ env.render_api_key }} 
+          api-key: ${{ env.render_api_key }}
