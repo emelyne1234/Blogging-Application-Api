@@ -14,6 +14,10 @@ env:
   api_key_secret: ${{ secrets.API_KEY_SECRET }}
   service_id: ${{ secrets.SERVICE_ID }}
   render_api_key: ${{ secrets.RENDER_API_KEY }}
+permissions:
+  contents: read
+  actions: read
+  packages: read
 
 jobs:
   test:
